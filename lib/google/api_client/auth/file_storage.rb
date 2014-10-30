@@ -73,7 +73,7 @@ module Google
            expires_in
            refresh_token
            token_credential_uri'.each do |var|
-            hash[var] = @authorization.instance_variable_get("@#{var}")
+            hash[var] = @authorization.instance_variable_get("@#{var}").to_s
           end
           hash['issued_at'] = @authorization.issued_at.to_i
 
